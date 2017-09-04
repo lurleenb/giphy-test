@@ -11,10 +11,21 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
-Route::get('search', function () {
+Route::get('/', 'GiphyController@index');
+
+/*Route::get('search', function () {
     return view('search');
+});*/
+
+Route::get('/giphs', 'GiphyController@show');
+
+Route::get('/search/{giph}', 'GiphyController@search');
+
+Route::get('/show/{showit}', function ($id)
+{
+    
 });
