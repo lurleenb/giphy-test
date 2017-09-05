@@ -1,9 +1,7 @@
 <?php
 
-//namespace GiphyApp;
 namespace App;
 
-//define('GIPHY_API_URL', 'http://api.giphy.com');
 const GIPHY_API_URL = 'http://api.giphy.com';
 
 class Giphy {
@@ -29,7 +27,6 @@ class Giphy {
         $query = http_build_query($params);
         $url = GIPHY_API_URL . $endpoint . ($query ? "?$query" : '');
         $result = file_get_contents($url);
-        //return $result ? json_decode($result) : false;
-        return $result ? $result : false;
+        return $result ? json_decode($result) : false;
     }
 }
